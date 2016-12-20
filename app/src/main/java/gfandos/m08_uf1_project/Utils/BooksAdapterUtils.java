@@ -21,26 +21,6 @@ public class BooksAdapterUtils extends ArrayAdapter<Book> {
         super(context, resource, objects);
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
 
-        Book b =  getItem(position);
-        Log.w("Book: ", b.toString());
-
-        CardsRowsBinding binding = null;
-
-        if(convertView == null) {
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            binding = DataBindingUtil.inflate(inflater, R.layout.cards_rows, parent, false);
-        } else {
-            binding = DataBindingUtil.getBinding(convertView);
-        }
-
-        binding.cardName.setText(card.getName());
-        binding.cardType.setText(card.getType());
-        Glide.with(getContext()).load(card.getImageUrl()).into(binding.cardImage);
-
-        return binding.getRoot();
-
-    }
 
 }

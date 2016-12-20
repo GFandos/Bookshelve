@@ -12,12 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import gfandos.m08_uf1_project.Pojos.Book;
@@ -32,12 +34,13 @@ import gfandos.m08_uf1_project.Utils.getBooksFromApiUtils;
  */
 public class MainActivityFragment extends Fragment {
 
-    String searchQuery;
-    ArrayList<Book> books;
+    private String searchQuery;
+    private ArrayList<Book> books;
+
+    private ArrayAdapter<String> adapter;
 
     public MainActivityFragment() {
         searchQuery = "";
-        books = new ArrayList<>();
     }
 
     @Override
@@ -65,7 +68,7 @@ public class MainActivityFragment extends Fragment {
         Button getBooksButton = (Button) getView().findViewById(R.id.getBooksButton);
         EditText searchText = (EditText) getView().findViewById(R.id.searchText);
 
-        searchQuery = searchText.getText().toString();
+        //searchQuery = searchText.getText().toString();
 
         getBooksButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,15 +93,24 @@ public class MainActivityFragment extends Fragment {
 
         ListView lv = (ListView) v.findViewById(R.id.listView);
 
-        lv.
+        ArrayList<String> titles = new ArrayList<>();
 
+        for(int i = 0; i < books.size(); ++i) {
+            titles.add(books.get(i).getTitle());
+        }
 
+        adapter = new ArrayAdapter<>(
+            getContext(),
+            R.layout.book_row,
+            R.id.bookTitle,
+            titles
+        );
     }
 
-    private class RefreshAsyncTask extends AsyncTask<Void, Void, Void> {
+    private class RefreshAsyncTask extends AsyncTask<Void, Void, ArrayList<Book>> {
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected ArrayList<Book> doInBackground(Void... voids) {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             String rarity = preferences.getString("rarity", "");
             String color = preferences.getString("color", "");
@@ -109,8 +121,15 @@ public class MainActivityFragment extends Fragment {
                 Log.d("DEBUG", books.get(i).toString());
             }
 
-            return null;
+            return books;
         }
 
+        @Override
+        protected void onPostExecute(ArrayList<Book> books) {
+            adapter.clear();
+            for (Book b : books) {
+                adapter.add(b.getTitle());
+            }
+        }
     }
 }
