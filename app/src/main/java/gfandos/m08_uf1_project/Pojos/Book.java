@@ -10,10 +10,12 @@ public class Book {
 
     ArrayList<String> authors;
     String title;
+    String imageURL;
 
-    public Book(ArrayList<String> a, String t) {
+    public Book(ArrayList<String> a, String t, String url) {
         authors = a;
         title = t;
+        imageURL = url;
     }
 
     public String toString(){

@@ -61,6 +61,9 @@ public class getBooksFromApiUtils {
 //                    for(int j = 0; j < authorsArray.length(); ++j) {
 //                        authors.add(authorsArray.get(j).toString());
 //                    }
+
+
+
                     authors.add(authorsString);
                 }
 
