@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,12 +47,27 @@ public class LibraryActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_library, container, false);
+        ListView listView = (ListView) v.findViewById(R.id.listView);
 
         adapter = new BooksAdapterUtils(
                 getContext(),
                 R.layout.book_row,
                 books
         );
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Book book = (Book) parent.getItemAtPosition(position);
+
+                Intent intent = new Intent(getContext(), BookDetailActivity.class);
+                intent.putExtra("book", book);
+
+                startActivity(intent);
+
+            }
+        });
 
         return v;
 

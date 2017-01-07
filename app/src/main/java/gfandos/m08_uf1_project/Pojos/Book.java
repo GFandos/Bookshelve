@@ -26,7 +26,7 @@ public class Book implements Serializable{
     }
 
     public String toString(){
-        String retValue = "Títle: " + title + ". Author: " + authors.get(0) + ". Image: " + imageURL;
+        String retValue = "Títle: " + title + ". Author: " + authors.get(0) + ". Image: " + imageURL + ". Publisher: " + publisher + ". PublishedDate: " + publishedDate + ". Description: " + description;
 
         return retValue;
     }
