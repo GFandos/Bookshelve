@@ -23,7 +23,6 @@ import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
 import gfandos.m08_uf1_project.Utils.BooksAdapterUtils;
 import gfandos.m08_uf1_project.Utils.getBooksFromApiUtils;
-import gfandos.m08_uf1_project.databinding.FragmentMainBinding;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -32,7 +31,6 @@ public class LibraryActivityFragment extends Fragment {
 
     private String searchQuery;
     private ArrayList<Book> books;
-    private FragmentMainBinding binding;
 
     private BooksAdapterUtils adapter;
 

@@ -19,7 +19,7 @@ public class Book {
     }
 
     public String toString(){
-        String retValue = "Títle: " + title + ". Author: " + authors.get(0);
+        String retValue = "Títle: " + title + ". Author: " + authors.get(0) + ". Image: " + imageURL;
 
         return retValue;
     }
@@ -30,6 +30,10 @@ public class Book {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
 }

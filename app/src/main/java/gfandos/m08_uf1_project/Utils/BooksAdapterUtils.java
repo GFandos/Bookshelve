@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -34,11 +36,13 @@ public class BooksAdapterUtils extends ArrayAdapter<Book> {
             convertView = inflater.inflate(R.layout.book_row, parent, false);
         }
 
-        TextView author = (TextView) convertView.findViewById(R.id.bookAuthor);
-        TextView title = (TextView) convertView.findViewById(R.id.bookTitle);
+//        TextView author = (TextView) convertView.findViewById(R.id.bookAuthor);
+//        TextView title = (TextView) convertView.findViewById(R.id.bookTitle);
+        ImageView bookImage = (ImageView) convertView.findViewById(R.id.bookImage);
 
-        author.setText(book.getAuthor().get(0));
-        title.setText(book.getTitle());
+//        author.setText(book.getAuthor().get(0));
+//        title.setText(book.getTitle());
+        Glide.with(getContext()).load(book.getImageURL()).into(bookImage);
 
         return convertView;
 

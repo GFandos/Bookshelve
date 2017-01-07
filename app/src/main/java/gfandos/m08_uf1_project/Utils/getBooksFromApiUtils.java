@@ -41,6 +41,7 @@ public class getBooksFromApiUtils {
             JSONObject jsonO = new JSONObject(HttpUtils.get(newUrl));
             JSONArray jsonItems = jsonO.getJSONArray("items");
             String title = "No title found";
+            String imageURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1000px-No_image_available.svg.png";
             ArrayList<String> authors = new ArrayList<>();
 
             for (int i = 0; i < jsonItems.length(); ++i) {
@@ -61,13 +62,19 @@ public class getBooksFromApiUtils {
 //                    for(int j = 0; j < authorsArray.length(); ++j) {
 //                        authors.add(authorsArray.get(j).toString());
 //                    }
-
-
+                    if(volumeInfo.has("imageLinks")) {
+                        JSONObject imageLinks = volumeInfo.getJSONObject("imageLinks");
+                        if(imageLinks.has("smallThumbnail")) {
+                            imageURL = imageLinks.get("smallThumbnail").toString();
+                        } else if(imageLinks.has("thumbnail")) {
+                            imageURL = imageLinks.get("thumbnail").toString();
+                        }
+                    }
 
                     authors.add(authorsString);
                 }
 
-                Book b = new Book(authors, title);
+                Book b = new Book(authors, title, imageURL);
                 books.add(b);
 
             }
