@@ -10,16 +10,22 @@ public class Book {
 
     ArrayList<String> authors;
     String title;
+    String imageURL;
 
-    public Book(ArrayList<String> a, String t) {
+    public Book(ArrayList<String> a, String t, String url) {
         authors = a;
         title = t;
+        imageURL = url;
     }
 
     public String toString(){
-        String retValue = "Títle: " + title + ". Author: " + authors.get(0);
+        String retValue = "Títle: " + title + ". Author: " + authors.get(0) + ". Image: " + imageURL;
 
         return retValue;
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     public ArrayList<String> getAuthor() {

@@ -21,6 +21,7 @@ import java.util.Arrays;
 
 import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
+import gfandos.m08_uf1_project.Utils.BooksAdapterUtils;
 import gfandos.m08_uf1_project.Utils.getBooksFromApiUtils;
 import gfandos.m08_uf1_project.databinding.FragmentMainBinding;
 
@@ -30,11 +31,10 @@ import gfandos.m08_uf1_project.databinding.FragmentMainBinding;
 public class LibraryActivityFragment extends Fragment {
 
     private String searchQuery;
-    private ArrayList<String> items;
     private ArrayList<Book> books;
     private FragmentMainBinding binding;
 
-    private ArrayAdapter<String> adapter;
+    private BooksAdapterUtils adapter;
 
     public LibraryActivityFragment() {
         searchQuery = "";
@@ -47,14 +47,10 @@ public class LibraryActivityFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_library, container, false);
 
-        String startingData[] = {"NO DATA"};
-        items = new ArrayList<>(Arrays.asList(startingData));
-
-        adapter = new ArrayAdapter<>(
+        adapter = new BooksAdapterUtils(
                 getContext(),
                 R.layout.book_row,
-                R.id.bookTitle,
-                items
+                books
         );
 
         return v;
@@ -109,7 +105,7 @@ public class LibraryActivityFragment extends Fragment {
 
             adapter.clear();
             for (Book b : books) {
-                adapter.add(b.getTitle());
+                adapter.add(b);
             }
 
             ListView listView = (ListView) getView().findViewById(R.id.listView);
