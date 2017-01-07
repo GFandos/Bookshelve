@@ -26,7 +26,7 @@ public class getBooksFromApiUtils {
                 .buildUpon()
                 .appendQueryParameter("q", search)
                 .build();
-        Log.d("DEBUG", builtUri.toString());
+        Log.d("DEBUG", builtUri.toString() + ". Search = " + search);
         return builtUri.toString();
 
     }
@@ -52,16 +52,25 @@ public class getBooksFromApiUtils {
                     JSONObject volumeInfo = object.getJSONObject("volumeInfo");
 
                     title = volumeInfo.get("title").toString();
-                    authors.add(volumeInfo.get("author").toString());
+                    String authorsString;
+                    if(volumeInfo.has("authors")) {
+                        authorsString = volumeInfo.getString("authors");
+                    }
+                    else authorsString = "No author found";
 
+//                    for(int j = 0; j < authorsArray.length(); ++j) {
+//                        authors.add(authorsArray.get(j).toString());
+//                    }
+                    authors.add(authorsString);
                 }
 
                 Book b = new Book(authors, title);
                 books.add(b);
 
             }
+
             for(int i = 0; i < books.size(); ++i) {
-                Log.d("Llistat cartes: ", books.get(i).toString());
+                Log.d("Llistat llibres: ", books.get(i).toString());
             }
 
         } catch (IOException e) {

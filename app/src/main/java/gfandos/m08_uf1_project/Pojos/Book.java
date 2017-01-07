@@ -16,6 +16,12 @@ public class Book {
         title = t;
     }
 
+    public String toString(){
+        String retValue = "Títle: " + title + ". Author: " + authors.get(0);
+
+        return retValue;
+    }
+
     public ArrayList<String> getAuthor() {
         return authors;
     }
