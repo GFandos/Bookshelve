@@ -43,6 +43,9 @@ public class getBooksFromApiUtils {
             String title = "No title found";
             String imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1000px-No_image_available.svg.png";
             ArrayList<String> authors = new ArrayList<>();
+            String publisher = "No publisher found";
+            String date = "No date found";
+            String description = "No description found";
 
             for (int i = 0; i < jsonItems.length(); ++i) {
 
@@ -53,16 +56,16 @@ public class getBooksFromApiUtils {
                     JSONObject volumeInfo = object.getJSONObject("volumeInfo");
 
                     title = volumeInfo.get("title").toString();
-                    String authorsString;
+                    JSONArray authorsArray;
                     if(volumeInfo.has("authors")) {
-                        authorsString = volumeInfo.getString("authors");
+                        authorsArray = volumeInfo.getJSONArray("authors");
+                        for(int j = 0; j < authorsArray.length(); ++j) {
+                            authors.add(authorsArray.get(j).toString());
+                        }
                     }
-                    else authorsString = "No author found";
 
                     if(volumeInfo.has("imageLinks")) {
-
                         JSONObject imageLinks = volumeInfo.getJSONObject("imageLinks");
-
                         if(imageLinks.has("smallThumbnail")) {
                             imageUrl = imageLinks.get("smallThumbnail").toString();
                         } else if(imageLinks.has("thumbnail")) {
@@ -70,13 +73,18 @@ public class getBooksFromApiUtils {
                         }
                     }
 
-//                    for(int j = 0; j < authorsArray.length(); ++j) {
-//                        authors.add(authorsArray.get(j).toString());
-//                    }
-                    authors.add(authorsString);
+                    if(volumeInfo.has("publisher")) {
+                        publisher = volumeInfo.get("publisher").toString();
+                    }
+                    if(volumeInfo.has("publishedDate")) {
+                        date = volumeInfo.get("publishedDate").toString();
+                    }
+                    if(volumeInfo.has("description")) {
+                        description = volumeInfo.get("description").toString();
+                    }
                 }
 
-                Book b = new Book(authors, title, imageUrl);
+                Book b = new Book(authors, title, imageUrl, publisher, date, description);
                 books.add(b);
 
             }

@@ -23,7 +23,11 @@
         <activity
             android:name=".Activities.LibraryActivity"
             android:label="@string/title_activity_library"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.BookDetailActivity"
+            android:label="@string/title_activity_book_detail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
