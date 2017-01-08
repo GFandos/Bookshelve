@@ -28,6 +28,10 @@
             android:name=".Activities.BookDetailActivity"
             android:label="@string/title_activity_book_detail"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <provider
+            android:name=".Utils.ContentProviderUtil"
+            android:authorities="${applicationId}.provider"
+            android:exported="false" />
     </application>
 
 </manifest>

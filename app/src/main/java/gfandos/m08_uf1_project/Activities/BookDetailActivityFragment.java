@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.databinding.DataBindingUtil;
 import com.bumptech.glide.Glide;
 
 import gfandos.m08_uf1_project.Pojos.Book;
@@ -27,6 +27,7 @@ public class BookDetailActivityFragment extends Fragment {
     private TextView dateDetail;
     private TextView descriptionDetail;
     private View view;
+
 
     public BookDetailActivityFragment() {
     }

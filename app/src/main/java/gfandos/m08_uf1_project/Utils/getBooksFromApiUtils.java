@@ -40,14 +40,16 @@ public class getBooksFromApiUtils {
             String newUrl = getUrl(search);
             JSONObject jsonO = new JSONObject(HttpUtils.get(newUrl));
             JSONArray jsonItems = jsonO.getJSONArray("items");
-            String title = "No title found";
-            String imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1000px-No_image_available.svg.png";
-            ArrayList<String> authors = new ArrayList<>();
-            String publisher = "No publisher found";
-            String date = "No date found";
-            String description = "No description found";
+
 
             for (int i = 0; i < jsonItems.length(); ++i) {
+
+                String title = "No title found";
+                String imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1000px-No_image_available.svg.png";
+                ArrayList<String> authors = new ArrayList<>();
+                String publisher = "No publisher found";
+                String date = "No date found";
+                String description = "No description found";
 
                 JSONObject object = jsonItems.getJSONObject(i);
 
@@ -61,7 +63,10 @@ public class getBooksFromApiUtils {
                         authorsArray = volumeInfo.getJSONArray("authors");
                         for(int j = 0; j < authorsArray.length(); ++j) {
                             authors.add(authorsArray.get(j).toString());
+                            Log.d("AUTHORS:", authorsArray.getString(j));
                         }
+                    } else {
+                        authors.add("No author found");
                     }
 
                     if(volumeInfo.has("imageLinks")) {
@@ -82,11 +87,10 @@ public class getBooksFromApiUtils {
                     if(volumeInfo.has("description")) {
                         description = volumeInfo.get("description").toString();
                     }
+
+                    Book b = new Book(authors, title, imageUrl, publisher, date, description);
+                    books.add(b);
                 }
-
-                Book b = new Book(authors, title, imageUrl, publisher, date, description);
-                books.add(b);
-
             }
 
             for(int i = 0; i < books.size(); ++i) {
