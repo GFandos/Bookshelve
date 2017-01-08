@@ -77,14 +77,7 @@ public class BookDetailActivityFragment extends Fragment {
         titleDetail.setText(b.getTitle());
 
         String authors = "";
-        for(int i = 0; i < b.getAuthor().size(); ++i) {
-            if(i == b.getAuthor().size() - 1) {
-                authors += b.getAuthor().get(i);
-            } else {
-                authors += b.getAuthor().get(i) + ", ";
-            }
-
-        }
+        authors = b.getAuthor();
         authorDetail.setText(authors);
 
         publisherDetail.setText(b.getPublisher());

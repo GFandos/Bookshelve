@@ -9,14 +9,14 @@ import java.util.ArrayList;
 
 public class Book implements Serializable{
 
-    ArrayList<String> authors;
-    String title;
-    String imageURL;
-    String publisher;
-    String publishedDate;
-    String description;
+    private String authors;
+    private String title;
+    private String imageURL;
+    private String publisher;
+    private String publishedDate;
+    private String description;
 
-    public Book(ArrayList<String> a, String t, String url, String pub, String date, String descr) {
+    public Book(String a, String t, String url, String pub, String date, String descr) {
         authors = a;
         title = t;
         imageURL = url;
@@ -26,7 +26,7 @@ public class Book implements Serializable{
     }
 
     public String toString(){
-        String retValue = "Títle: " + title + ". Author: " + authors.get(0) + ". Image: " + imageURL + ". Publisher: " + publisher + ". PublishedDate: " + publishedDate + ". Description: " + description;
+        String retValue = "Títle: " + title + ". Author: " + authors + ". Image: " + imageURL + ". Publisher: " + publisher + ". PublishedDate: " + publishedDate + ". Description: " + description;
 
         return retValue;
     }
@@ -35,7 +35,7 @@ public class Book implements Serializable{
         return imageURL;
     }
 
-    public ArrayList<String> getAuthor() {
+    public String getAuthor() {
         return authors;
     }
 

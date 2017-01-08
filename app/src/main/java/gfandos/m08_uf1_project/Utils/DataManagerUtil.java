@@ -20,7 +20,7 @@ public class DataManagerUtil {
     private static Uri BOOK_URI = URI_HELPER.getUri(Book.class);
 
     public static void storeBook(Book book, Context context) {
-//        cupboard().withContext(context).put(BOOK_URI, Book.class, book);
+        cupboard().withContext(context).put(BOOK_URI, Book.class, book);
     }
 
     public static ArrayList<Book> getStoredBooks() {

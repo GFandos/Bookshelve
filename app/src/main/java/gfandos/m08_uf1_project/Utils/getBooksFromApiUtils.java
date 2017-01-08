@@ -87,7 +87,17 @@ public class getBooksFromApiUtils {
                         description = volumeInfo.get("description").toString();
                     }
 
-                    Book b = new Book(authors, title, imageUrl, publisher, date, description);
+                    String aut = "";
+                    for(int t = 0; t < authors.size(); ++t) {
+                        if(t == authors.size() - 1) {
+                            aut += authors.get(t);
+                        } else {
+                            aut += authors.get(t) + ", ";
+                        }
+
+                    }
+
+                    Book b = new Book(aut, title, imageUrl, publisher, date, description);
                     books.add(b);
                 }
             }
