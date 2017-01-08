@@ -41,7 +41,6 @@ public class getBooksFromApiUtils {
             JSONObject jsonO = new JSONObject(HttpUtils.get(newUrl));
             JSONArray jsonItems = jsonO.getJSONArray("items");
 
-
             for (int i = 0; i < jsonItems.length(); ++i) {
 
                 String title = "No title found";
