@@ -1,4 +1,4 @@
-package gfandos.m08_uf1_project.Activities;
+package gfandos.m08_uf1_project.Activities.Fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +20,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import gfandos.m08_uf1_project.Activities.BookDetailActivity;
 import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
 import gfandos.m08_uf1_project.Utils.BooksAdapterUtils;

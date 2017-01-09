@@ -4,4 +4,5 @@
     <string name="title_activity_library">LibraryActivity</string>
     <string name="title_activity_book_detail">BookDetailActivity</string>
     <string name="title_activity_description_">Description_Activity</string>
+    <string name="title_activity_bookshelve_">Bookshelve_Activity</string>
 </resources>

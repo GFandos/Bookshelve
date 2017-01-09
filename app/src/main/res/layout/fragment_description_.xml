@@ -5,7 +5,7 @@
     android:id="@+id/content_description_"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gfandos.m08_uf1_project.Activities.Description_ActivityFragment"
+    tools:context="gfandos.m08_uf1_project.Activities.Fragments.Description_ActivityFragment"
     tools:showIn="@layout/activity_description_">
 
 

@@ -1,4 +1,4 @@
-package gfandos.m08_uf1_project.Activities;
+package gfandos.m08_uf1_project.Activities.Fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import gfandos.m08_uf1_project.Activities.Description_Activity;
 import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
 import gfandos.m08_uf1_project.Utils.ContentProviderUtil;

@@ -8,7 +8,7 @@
         android:id="@+id/content_book_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="gfandos.m08_uf1_project.Activities.BookDetailActivityFragment"
+        tools:context="gfandos.m08_uf1_project.Activities.Fragments.BookDetailActivityFragment"
         tools:showIn="@layout/activity_book_detail">
 
 

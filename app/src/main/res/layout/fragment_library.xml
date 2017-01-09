@@ -7,7 +7,7 @@
         android:id="@+id/content_library"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="gfandos.m08_uf1_project.Activities.LibraryActivityFragment"
+        tools:context="gfandos.m08_uf1_project.Activities.Fragments.LibraryActivityFragment"
         tools:showIn="@layout/activity_library">
 
 

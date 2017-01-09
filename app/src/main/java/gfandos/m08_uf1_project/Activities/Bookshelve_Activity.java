@@ -9,12 +9,12 @@ import android.view.View;
 
 import gfandos.m08_uf1_project.R;
 
-public class Description_Activity extends AppCompatActivity {
+public class Bookshelve_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_description_);
+        setContentView(R.layout.activity_bookshelve_);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
