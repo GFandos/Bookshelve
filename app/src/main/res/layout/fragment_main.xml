@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="gfandos.m08_uf1_project.MainActivityFragment"
-    tools:showIn="@layout/activity_main">
 
-    <Button
-        android:text="Library"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:id="@+id/API"
-        app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="1.0" />
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:text="Bookshelve"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:id="@+id/Bookshelve"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
-        app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.12" />
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="gfandos.m08_uf1_project.Activities.MainActivityFragment"
+        tools:showIn="@layout/activity_main">
 
-    <android.support.constraint.Guideline
-        android:layout_width="384dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="202dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteY="202dp"
-        tools:layout_editor_absoluteX="0dp" />
+        <Button
+            android:text="Library"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/apiButton"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline" />
 
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
-        app:layout_constraintGuide_begin="285dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="285dp" />
+        <Button
+            android:text="Bookshelve"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            app:layout_constraintVertical_bias="0.44"
+            app:layout_constraintRight_toLeftOf="@+id/guideline2"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline" />
 
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="455dp"
-        android:id="@+id/guideline3"
-        app:layout_constraintGuide_begin="100dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="100dp" />
-</android.support.constraint.ConstraintLayout>
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="77dp"
+            app:layout_constraintGuide_percent="0.20052083" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline2"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="309dp"
+            app:layout_constraintGuide_percent="0.8046875" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline4"
+            app:layout_constraintGuide_begin="221dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="221dp"
+            tools:layout_editor_absoluteX="0dp" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
+
