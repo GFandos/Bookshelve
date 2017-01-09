@@ -71,7 +71,6 @@ public class BookDetailActivityFragment extends Fragment {
         titleDetail = (TextView) view.findViewById(R.id.titleDetail);
         authorDetail = (TextView) view.findViewById(R.id.authorDetail);
         publisherDetail = (TextView) view.findViewById(R.id.publisherDetail);
-        descriptionDetail = (TextView) view.findViewById(R.id.descriptionDetail);
 
         Glide.with(getContext()).load(b.getImageURL()).into(bookImage);
         titleDetail.setText(b.getTitle());
@@ -81,7 +80,6 @@ public class BookDetailActivityFragment extends Fragment {
         authorDetail.setText(authors);
 
         publisherDetail.setText(b.getPublisher());
-        descriptionDetail.setText(b.getDescription());
     }
 
     @Override
@@ -89,13 +87,23 @@ public class BookDetailActivityFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Button fav = (Button) getView().findViewById(R.id.fav);
+        Button descriptionButton = (Button) getView().findViewById(R.id.descriptionButton);
 
         fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                ArrayList<Book> booksPojoArrayList = new ArrayList<Book>();
-//                booksPojoArrayList.add(book);
                 DataManagerUtil.storeBook(book, getContext());
+            }
+        });
+
+        descriptionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getContext(), Description_Activity.class);
+                intent.putExtra("book", book);
+
+                startActivity(intent);
             }
         });
 

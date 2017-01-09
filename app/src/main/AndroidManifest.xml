@@ -27,11 +27,17 @@
         <activity
             android:name=".Activities.BookDetailActivity"
             android:label="@string/title_activity_book_detail"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <provider
             android:name=".Utils.ContentProviderUtil"
             android:authorities="${applicationId}.provider"
             android:exported="false" />
+
+        <activity
+            android:name=".Activities.Description_Activity"
+            android:label="@string/title_activity_description_"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
