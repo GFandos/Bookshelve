@@ -41,6 +41,14 @@
         <activity
             android:name=".Activities.Bookshelve_Activity"
             android:label="@string/title_activity_bookshelve_"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.MainActivity$StoredBook_activity"
+            android:label="@string/title_activity_stored_book_activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activities.StoredBookDetail_Activity"
+            android:label="@string/title_activity_stored_book_detail_"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

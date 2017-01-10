@@ -96,8 +96,14 @@ public class getBooksFromApiUtils {
                         }
 
                     }
+                    Book b = new Book();
+                    b.setAuthors(aut);
+                    b.setTitle(title);
+                    b.setImageURL(imageUrl);
+                    b.setPublisher(publisher);
+                    b.setPublishedDate(date);
+                    b.setDescription(description);
 
-                    Book b = new Book(aut, title, imageUrl, publisher, date, description);
                     books.add(b);
                 }
             }

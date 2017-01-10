@@ -5,7 +5,7 @@ package gfandos.m08_uf1_project.Utils;
  */
 
 import android.content.Context;
-import android.content.CursorLoader;
+import android.support.v4.content.CursorLoader;
 import android.net.Uri;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class DataManagerUtil {
         cupboard().withContext(context).put(BOOK_URI, Book.class, book);
     }
 
-    static CursorLoader getCursorLoader(Context context) {
+    public static CursorLoader getCursorLoader(Context context) {
         return new CursorLoader(context, BOOK_URI, null, null, null, null);
     }
 

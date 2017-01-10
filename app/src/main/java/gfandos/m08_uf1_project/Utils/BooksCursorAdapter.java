@@ -39,13 +39,13 @@ public class BooksCursorAdapter extends CupboardCursorAdapter<Book>{
     public void bindView(View view, Context context, Book model) {
 
         ImageView image = (ImageView) view.findViewById(R.id.storedBookImage);
-        RatingBar rate = (RatingBar) view.findViewById(R.id.ratingBar);
+        TextView rateTv = (TextView) view.findViewById(R.id.ratingTv);
         TextView coments = (TextView) view.findViewById(R.id.countComents);
 
         Glide.with(context).load(model.getImageURL()).into(image);
-        rate.setNumStars(5);
-        rate.setRating(0);
+        rateTv.setText("Rating: none");
         coments.setText("Coments: 0");
+
     }
 
 }
