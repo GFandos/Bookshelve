@@ -82,4 +82,8 @@ public class Book implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getAuthors() {
+        return authors;
+    }
 }

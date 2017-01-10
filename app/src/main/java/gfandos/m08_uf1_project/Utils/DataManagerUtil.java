@@ -28,4 +28,8 @@ public class DataManagerUtil {
         return new CursorLoader(context, BOOK_URI, null, null, null, null);
     }
 
+    public static void deletBook(Context context, Book b) {
+        cupboard().withContext(context).delete(BOOK_URI, b);
+    }
+
 }

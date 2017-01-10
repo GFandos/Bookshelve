@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import gfandos.m08_uf1_project.Activities.BookDetailActivity;
+import gfandos.m08_uf1_project.Activities.StoredBookDetail_Activity;
 import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
 import gfandos.m08_uf1_project.Utils.BooksCursorAdapter;
@@ -47,7 +48,7 @@ public class Bookshelve_ActivityFragment extends Fragment implements LoaderManag
 
                 Book book = (Book) parent.getItemAtPosition(position);
 
-                Intent intent = new Intent(getContext(), BookDetailActivity.class);
+                Intent intent = new Intent(getContext(), StoredBookDetail_Activity.class);
                 intent.putExtra("book", book);
 
                 startActivity(intent);

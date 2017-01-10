@@ -54,7 +54,7 @@
         android:layout_marginLeft="16dp" />
 
     <TextView
-        android:text="Comments"
+        android:text="Comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
