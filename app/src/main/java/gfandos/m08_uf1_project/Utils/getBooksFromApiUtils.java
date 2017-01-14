@@ -25,6 +25,7 @@ public class getBooksFromApiUtils {
         Uri builtUri = Uri.parse(url)
                 .buildUpon()
                 .appendQueryParameter("q", search)
+                .appendQueryParameter("maxResults", "20")
                 .build();
         Log.d("DEBUG", builtUri.toString() + ". Search = " + search);
         return builtUri.toString();

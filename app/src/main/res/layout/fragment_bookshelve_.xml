@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gfandos.m08_uf1_project.Activities.Fragments.Bookshelve_ActivityFragment"
-    tools:showIn="@layout/activity_bookshelve_">
+    tools:showIn="@layout/activity_bookshelve_"
+    android:background="@drawable/fondo">
 
 
     <TextView
@@ -23,7 +24,7 @@
         android:textStyle="normal|bold" />
 
     <ListView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/textView5"

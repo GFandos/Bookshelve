@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gfandos.m08_uf1_project.Activities.Fragments.StoredBookDetail_ActivityFragment"
-    tools:showIn="@layout/activity_stored_book_detail_">
+    tools:showIn="@layout/activity_stored_book_detail_"
+    android:src="@drawable/portada"
+    android:background="@drawable/fondo">
 
 
     <ImageView
@@ -37,7 +39,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp"
         app:layout_constraintLeft_toRightOf="@+id/imageView"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginLeft="8dp"
+        android:isIndicator="false" />
 
     <TextView
         android:text="Comment"
