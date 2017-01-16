@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">M08_UF1_Project</string>
+    <string name="app_name">Bookshelf</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_library">LibraryActivity</string>
     <string name="title_activity_book_detail">BookDetailActivity</string>
     <string name="title_activity_description_">Description_Activity</string>
+    <string name="title_activity_bookshelve_">Bookshelve_Activity</string>
+    <string name="title_activity_stored_book_activity">StoredBook_activity</string>
+    <string name="title_activity_stored_book_detail_">StoredBookDetail_Activity</string>
 </resources>

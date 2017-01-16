@@ -1,4 +1,4 @@
-package gfandos.m08_uf1_project.Activities;
+package gfandos.m08_uf1_project.Activities.Fragments;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;

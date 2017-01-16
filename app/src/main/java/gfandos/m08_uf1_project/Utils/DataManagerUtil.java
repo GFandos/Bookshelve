@@ -5,6 +5,7 @@ package gfandos.m08_uf1_project.Utils;
  */
 
 import android.content.Context;
+import android.support.v4.content.CursorLoader;
 import android.net.Uri;
 
 import java.util.ArrayList;
@@ -23,13 +24,12 @@ public class DataManagerUtil {
         cupboard().withContext(context).put(BOOK_URI, Book.class, book);
     }
 
-    public static ArrayList<Book> getStoredBooks() {
+    public static CursorLoader getCursorLoader(Context context) {
+        return new CursorLoader(context, BOOK_URI, null, null, null, null);
+    }
 
-        ArrayList<Book> books = new ArrayList<>();
-
-
-
-        return books;
+    public static void deletBook(Context context, Book b) {
+        cupboard().withContext(context).delete(BOOK_URI, b);
     }
 
 }

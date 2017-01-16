@@ -16,13 +16,17 @@ public class Book implements Serializable{
     private String publishedDate;
     private String description;
 
-    public Book(String a, String t, String url, String pub, String date, String descr) {
+    /*public Book(String a, String t, String url, String pub, String date, String descr) {
         authors = a;
         title = t;
         imageURL = url;
         publisher = pub;
         publishedDate = date;
         description = descr;
+    }*/
+
+    public Book() {
+
     }
 
     public String toString(){
@@ -53,5 +57,33 @@ public class Book implements Serializable{
 
     public String getDescription() {
         return description;
+    }
+
+    public void setAuthors(String authors) {
+        this.authors = authors;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAuthors() {
+        return authors;
     }
 }

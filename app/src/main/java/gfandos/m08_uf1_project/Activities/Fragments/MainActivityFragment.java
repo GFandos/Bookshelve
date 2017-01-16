@@ -1,4 +1,4 @@
-package gfandos.m08_uf1_project.Activities;
+package gfandos.m08_uf1_project.Activities.Fragments;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import gfandos.m08_uf1_project.Activities.Bookshelve_Activity;
+import gfandos.m08_uf1_project.Activities.LibraryActivity;
 import gfandos.m08_uf1_project.Pojos.Book;
 import gfandos.m08_uf1_project.R;
 import gfandos.m08_uf1_project.Utils.getBooksFromApiUtils;
@@ -55,11 +57,23 @@ public class MainActivityFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Button apiButton = (Button) getView().findViewById(R.id.apiButton);
+        Button bookshelveButton = (Button) getView().findViewById(R.id.bookshelveButton);
+
         apiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent i = new Intent(getActivity(), LibraryActivity.class);
+
+                startActivity(i);
+            }
+        });
+
+        bookshelveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getActivity(), Bookshelve_Activity.class);
 
                 startActivity(i);
             }

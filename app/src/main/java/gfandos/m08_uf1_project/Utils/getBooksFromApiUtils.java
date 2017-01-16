@@ -25,6 +25,7 @@ public class getBooksFromApiUtils {
         Uri builtUri = Uri.parse(url)
                 .buildUpon()
                 .appendQueryParameter("q", search)
+                .appendQueryParameter("maxResults", "20")
                 .build();
         Log.d("DEBUG", builtUri.toString() + ". Search = " + search);
         return builtUri.toString();
@@ -96,8 +97,14 @@ public class getBooksFromApiUtils {
                         }
 
                     }
+                    Book b = new Book();
+                    b.setAuthors(aut);
+                    b.setTitle(title);
+                    b.setImageURL(imageUrl);
+                    b.setPublisher(publisher);
+                    b.setPublishedDate(date);
+                    b.setDescription(description);
 
-                    Book b = new Book(aut, title, imageUrl, publisher, date, description);
                     books.add(b);
                 }
             }

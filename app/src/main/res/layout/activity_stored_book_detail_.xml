@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="gfandos.m08_uf1_project.Activities.Description_Activity">
+    tools:context="gfandos.m08_uf1_project.Activities.StoredBookDetail_Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppBarOverlay">
+        android:theme="@style/AppBarOverlay"
+        android:background="@android:color/black">
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_description_" />
+    <include layout="@layout/content_stored_book_detail_" />
 
 </android.support.design.widget.CoordinatorLayout>
